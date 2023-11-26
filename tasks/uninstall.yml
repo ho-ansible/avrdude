@@ -1,1 +1,15 @@
 ---
+
+- name: avrdude | uninstall packages
+  tags:
+  - package
+  package:
+    name: avrdude
+    state: absent
+
+- name: avrdude | remove udev rules
+  tags:
+  - udev
+  file:
+    path: "{{ avrdude_udev_path }}"
+    state: absent

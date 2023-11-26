@@ -1,0 +1,16 @@
+# {{ ansible_managed }}
+# USB programmers for AVR microcontrollers
+
+# Skip if not USB
+SUBSYSTEM!="usb", GOTO="avr_rules_end"
+
+{% for usb in avrdude_usbids | d %}
+# {{ usb.name }}
+ATTR{idVendor}=="{{ usb.vendor }}", ATTR{idProduct}=="{{ usb.product }}", ENV{is_avr}="yes"
+{% endfor %}
+
+# Enable user access
+ENV{is_avr}=="yes", MODE="0660", GROUP="plugdev"
+
+LABEL="avr_rules_end"
+

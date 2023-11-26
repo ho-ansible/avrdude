@@ -1,1 +1,15 @@
 ---
+
+- name: avrdude | install packages
+  tags:
+  - package
+  package:
+    name: avrdude
+    state: latest
+
+- name: avrdude | permissions on USB device via udev
+  tags:
+  - udev
+  template:
+    src: udev-rules.j2
+    dest: "{{ avrdude_udev_path }}"

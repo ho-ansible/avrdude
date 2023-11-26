@@ -2,9 +2,9 @@
 # Uninstall role
 # Run prior to removing host from inventory groups, so hostvars are accessible
 ---
-- name: template | uninstall
+- name: avrdude | uninstall
   hosts: all
   tasks:
   - include_role:
-      name: template
+      name: avrdude
       tasks_from: uninstall.yml

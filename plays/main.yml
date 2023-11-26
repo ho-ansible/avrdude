@@ -1,10 +1,9 @@
 #! /usr/bin/env ansible-playbook
 # Configure template role
-# Replace 'all' with your own inventory group
 ---
-- name: template | template role
-  hosts: all
+- name: avrdude | AVR programmer
+  hosts: avrdude
   roles:
-  - role: template
+  - role: avrdude
     tags:
-    - template
+    - avrdude

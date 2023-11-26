@@ -1,1 +1,2 @@
 ---
+avrdude_udev_path: /etc/udev/rules.d/51-avr.rules

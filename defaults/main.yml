@@ -1,1 +1,5 @@
 ---
+avrdude_usbids:
+- name: USBASP
+  vendor: 16c0
+  product: 05dc
